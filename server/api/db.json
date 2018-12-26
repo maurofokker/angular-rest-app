@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "Red Item",
-      "description": "This is a red item"
-    },
-    {
       "id": 2,
       "name": "Orange Item",
       "description": "This is an orange item"
