@@ -1,11 +1,11 @@
 import { OnInit, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-review',
+  selector: 'app-reviews',
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css']
 })
-export class ReviewComponent implements OnInit {
+export class ReviewsComponent implements OnInit {
 
   simple = 'Hello review!';
 

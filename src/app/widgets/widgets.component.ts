@@ -3,11 +3,11 @@ import { WidgetsService, Widget } from 'app/shared';
 
 // decorate widget component to use the template
 @Component({
-  selector: 'app-widget',
+  selector: 'app-widgets',
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.css'],
 })
-export class WidgetComponent implements OnInit {
+export class WidgetsComponent implements OnInit {
 
   selectedWidget: Widget;
   widgets: Widget[];
