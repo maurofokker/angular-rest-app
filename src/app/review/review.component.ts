@@ -7,6 +7,10 @@ import { OnInit, Component } from '@angular/core';
 })
 export class ReviewComponent implements OnInit {
 
+  simple = 'Hello review!';
+
+  list = ['one', 'two', 'three', 'four'];
+
   ngOnInit(): void {
     console.log('on init...');
   }

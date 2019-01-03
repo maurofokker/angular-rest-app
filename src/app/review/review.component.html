@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Review - {{simple}}</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor='let item of list'>
+            <p mat-line>
+              {{item}}
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

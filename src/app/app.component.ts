@@ -10,6 +10,7 @@ export class AppComponent {
   links = [
     { path: '/home', icon: 'home', label: 'Home'},
     { path: '/items', icon: 'list', label: 'Items'},
-    { path: '/widgets', icon: 'widgets', label: 'Widgets'}
+    { path: '/widgets', icon: 'widgets', label: 'Widgets'},
+    { path: '/review', icon: 'rate_review', label: 'Review'}
   ];
 }
