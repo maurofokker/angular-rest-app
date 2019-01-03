@@ -15,7 +15,7 @@ import { ItemsListComponent } from './items/items-list/items-list.component';
 import { ItemDetailComponent } from './items/item-detail/item-detail.component';
 import { HomeComponent } from './home/home.component';
 import { WidgetComponent } from './widgets/widgets.component';
-import { ReviewComponent } from './review/review.component';
+import { ReviewComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
