@@ -17,10 +17,33 @@ export class WidgetsComponent implements OnInit {
   ngOnInit(): void {
     console.log('load widgets');
     this.widgets = this.widgetsService.loadWidgets();
+    this.reset();
+  }
+
+  /**
+   * to prepopulate form object
+   * with pristine object
+   */
+  reset() {
+    this.selectedWidget = {
+      id: null,
+      name: '',
+      description: ''
+    };
   }
 
   // assign the selected widget to the selectedWidget property
   selected(widget) {
     this.selectedWidget = widget;
+  }
+
+  save(widget) {
+    console.log('SAVING WIDGET', widget);
+    // this.widgets.push(widget);
+    this.reset()
+  }
+
+  cancel() {
+    this.reset();
   }
 }
