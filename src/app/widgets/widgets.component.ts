@@ -46,4 +46,10 @@ export class WidgetsComponent implements OnInit {
   cancel() {
     this.reset();
   }
+
+  delete(widget) {
+    console.log('DELETING WIDGET', widget);
+    // this.widgets.push(widget);
+    this.reset()
+  }
 }

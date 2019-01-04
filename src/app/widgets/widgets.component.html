@@ -1,69 +1,11 @@
 <div class="container">
-  <!-- WIDGETS LIST -->
-  <div class="col-50">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h1>Widgets</h1>
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item
-            *ngFor="let widget of widgets"
-            (click)="selected(widget)"
-          >
-            <h3 mat-line>{{widget.name}}</h3>
-            <button mat-icon-button>
-              <mat-icon>close</mat-icon>
-            </button>
-            <p mat-line>
-              {{widget.description}}
-            </p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- WIDGET DETAILS -->
-  <div class="col-50">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h1>
-            <!-- if widget selected shows the name, else shows ng-template fragment -->
-            <span *ngIf="selectedWidget; else prompt">Editing {{selectedWidget.name}}</span>
-            <ng-template #prompt>Select a Widget</ng-template>
-          </h1>
-        </mat-card-title>
-      </mat-card-header>
-      <form #myForm="ngForm"
-          (submit)="save(selectedWidget)">
-        <mat-card-content>
-          <mat-form-field class="full-width">
-            <input required
-              matInput
-              placeholder="Name"
-              [(ngModel)]="selectedWidget.name"
-              type="text" name="name">
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input
-              matInput
-              placeholder="Description"
-              [(ngModel)]="selectedWidget.description"
-              type="text" name="description">
-          </mat-form-field>
-          <hr>
-          <pre>{{myForm.value | json}}</pre>
-          <hr>
-          <pre>{{myForm.valid}}</pre>
-        </mat-card-content>
-        <mat-card-actions>
-          <button type="submit" [disabled]="!myForm.valid" mat-button>Save</button>
-          <button type="button" mat-button (click)="cancel()">Cancel</button>
-        </mat-card-actions>
-      </form>
-    </mat-card>
-  </div>
+  <app-widgets-list class="col-50" [widgets]="widgets"
+                  (selected)="selected($event)"
+                  (deleted)="delete($event)">
+  </app-widgets-list>
+
+  <app-widget-details class="col-50" [widget]="selectedWidget"
+                   (saved)="save($event)"
+                   (cancelled)="cancel($event)">
+  </app-widget-details>
 </div>
