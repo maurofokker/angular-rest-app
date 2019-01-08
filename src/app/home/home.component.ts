@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   items: Item[];
   widgets: Widget[];
 
+  myStatus = 'active';
+
   constructor(private itemsService: ItemsService, private widgetsService: WidgetsService) { }
 
   ngOnInit() {
@@ -32,5 +34,9 @@ export class HomeComponent implements OnInit {
 
   handleResults(items) {
     this.items = items;
+  }
+
+  logout(event) {
+    this.myStatus = 'LOGGED OUT';
   }
 }
