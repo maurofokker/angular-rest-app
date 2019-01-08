@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   getWidgets() {
-    this.widgets = this.widgetsService.loadWidgets();
+    this.widgetsService.all()
+      .subscribe(widgets => this.widgets = widgets);
   }
 }

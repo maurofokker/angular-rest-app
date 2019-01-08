@@ -34,23 +34,8 @@
   "widgets": [
     {
       "id": 1,
-      "name": "Red Widget",
-      "description": "This is a red widget"
-    },
-    {
-      "id": 2,
-      "name": "Orange Widget",
-      "description": "This is an orange widget"
-    },
-    {
-      "id": 3,
-      "name": "Yellow Widget",
-      "description": "This is a yellow widget"
-    },
-    {
-      "id": 4,
-      "name": "Green Widget",
-      "description": "This is a green widget"
+      "name": "REMOTE Red Widget",
+      "description": "This is a red widget upd"
     },
     {
       "id": 5,
@@ -65,7 +50,22 @@
     {
       "id": 7,
       "name": "Violet Widget",
-      "description": "This is a violet widget"
+      "description": "This is a violet widget update"
+    },
+    {
+      "id": 8,
+      "name": "Cyan Widget",
+      "description": "This is a cyan widget creation"
+    },
+    {
+      "id": 9,
+      "name": "Dark Green Widget",
+      "description": "New widget creation"
+    },
+    {
+      "id": 10,
+      "name": "Light Green Widget",
+      "description": "another widget creation"
     }
   ]
 }

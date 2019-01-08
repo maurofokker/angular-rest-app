@@ -1,4 +1,4 @@
-import { OnInit, Component, Input } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { WidgetsService, Widget } from 'app/shared';
 
 // decorate widget component to use the template
@@ -16,8 +16,13 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('load widgets');
-    this.widgets = this.widgetsService.loadWidgets();
+    this.loadWidgets();
     this.reset();
+  }
+
+  loadWidgets() {
+    this.widgetsService.all()
+      .subscribe(widgets => this.widgets = widgets);
   }
 
   /**
@@ -37,19 +42,56 @@ export class WidgetsComponent implements OnInit {
     this.selectedWidget = widget;
   }
 
-  save(widget) {
-    console.log('SAVING WIDGET', widget);
-    // this.widgets.push(widget);
-    this.reset()
-  }
-
   cancel() {
     this.reset();
   }
 
+  save(widget) {
+    console.log('SAVING WIDGET', widget);
+    if (!widget.id) {
+      this.create(widget);
+    } else {
+      this.update(widget);
+    }
+  }
+
+  /*
+  // reuse logic but is not pretty readable
+  execute(widget, action) {
+    this.widgetsService[action](widget)
+      .subscribe(res => {
+        this.loadWidgets();
+        this.reset();
+      });
+  }
+  */
+
+  create(widget) {
+    this.widgetsService.create(widget)
+      .subscribe(res => {
+        this.loadWidgets();
+        this.reset();
+      });
+  }
+
+  update(widget) {
+    this.widgetsService.update(widget)
+      .subscribe(res => {
+        this.loadWidgets();
+        this.reset();
+      })
+  }
+
   delete(widget) {
     console.log('DELETING WIDGET', widget);
-    // this.widgets.push(widget);
-    this.reset()
+    // this.execute(widget, 'delete');
+
+    this.widgetsService.delete(widget)
+      .subscribe(res => {
+        this.loadWidgets();
+        this.reset();
+      });
+
   }
+
 }
